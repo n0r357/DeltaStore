@@ -10,7 +10,7 @@ namespace DeltaStore
     {
         public void Start()
         {
-
+            Console.WriteLine("Hello world!");
         }
     }
 }
