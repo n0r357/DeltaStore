@@ -8,5 +8,9 @@ namespace DeltaStore
 {
     class Runtime
     {
+        public void Start()
+        {
+
+        }
     }
 }
