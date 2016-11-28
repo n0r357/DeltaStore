@@ -10,7 +10,29 @@ namespace DeltaStore
     {
         public void Start()
         {
-            Console.WriteLine("Hello world!");
+
+            Manager mgr = new Manager();
+            bool loop = true;
+
+            while (loop)
+            {
+
+                Console.Clear();
+                Menus.Start();
+                var input = Console.ReadKey(true).Key;
+
+                switch (input)
+                {
+
+                    case ConsoleKey.D1:
+                        mgr.AddInstrument();
+                        Console.ReadKey();
+                        break;
+                    case ConsoleKey.D2:
+                        loop = false;
+                        break;
+                }
+            }
         }
     }
 }
