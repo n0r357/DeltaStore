@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace DeltaStore
 {
-    class Manager
+    public class Manager
     {
 
-        List<Instrument> Instruments { get; set; }
+        public List<Instrument> Instruments { get; set; }
 
         public Manager()
         {
@@ -25,7 +25,11 @@ namespace DeltaStore
         {
             Instrument newInstrument = new Instrument();
 
-            newInstrument.Name = ValidInput.Name();
+            List<string> instrumentNames = Instruments
+                .Select(x => x.Name)
+                .ToList();
+
+            newInstrument.Name = ValidInput.Name(instrumentNames);
 
             if (String.IsNullOrEmpty(newInstrument.Name))
             {
